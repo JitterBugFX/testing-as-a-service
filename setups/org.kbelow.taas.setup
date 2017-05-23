@@ -205,13 +205,16 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="${scope.project.name}">
+        name="TAAS Server">
       <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:RepositoryPredicate"
-            project="setups"/>
-      </predicate>
+          xsi:type="predicates:NamePredicate"
+          pattern="org.kbelow.taas.*"/>
+    </workingSet>
+    <workingSet
+        name="TAAS Setup Models">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="setups.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
