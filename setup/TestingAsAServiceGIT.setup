@@ -40,7 +40,8 @@
       defaultValue="Neon"
       storageURI="scope://Workspace"/>
   <setupTask
-      xsi:type="setup.p2:P2Task">
+      xsi:type="setup.p2:P2Task"
+      label="Kotlin">
     <requirement
         name="org.jetbrains.kotlin.feature.feature.group"
         versionRange="0.8.2.v20170314-0957"/>
@@ -49,7 +50,8 @@
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
-      xsi:type="setup.p2:P2Task">
+      xsi:type="setup.p2:P2Task"
+      label="Gradle editor">
     <requirement
         name="org.nodeclipse.enide.editors.gradle.feature.feature.group"
         versionRange="1.0.2.201509250223"/>
