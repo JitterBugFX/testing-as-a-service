@@ -12,7 +12,7 @@
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="org.kbelow.taas"
-    label="Testing As A Service">
+    label="org.kbelow.taas">
   <setupTask
       xsi:type="setup:CompoundTask"
       name="User Preferences">
@@ -75,6 +75,10 @@
       defaultValue="Neon"
       storageURI="scope://Workspace"/>
   <setupTask
+      xsi:type="setup.p2:P2Task">
+    <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
       xsi:type="setup.p2:P2Task"
       label="Kotlin">
     <requirement
@@ -95,7 +99,7 @@
   </setupTask>
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.testing.as.a.service.git"
+      id="git.clone.org.kbelow.taas"
       remoteURI="JitterBugFX/testing-as-a-service.git">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -124,7 +128,7 @@
       <requirement
           name="*"/>
       <sourceLocator
-          rootFolder="${git.clone.testing.as.a.service.git.location}"
+          rootFolder="${git.clone.org.kbelow.taas.location}"
           locateNestedProjects="true"/>
       <repositoryList
           name="Oxygen">
@@ -187,8 +191,8 @@
       label="Master">
     <setupTask
         xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.testing.as.a.service.git"
-        value="=https://git.eclipse.org/c/JitterBugFX/testing-as-a-service.git.git/plain/setup/org.kbelow.taas.setup->${git.clone.testing.as.a.service.git.location|uri}/setup/org.kbelow.taas.setup"
+        option="-Doomph.redirection.org.kbelow.taas"
+        value="=https://git.eclipse.org/c/JitterBugFX/testing-as-a-service.git.git/plain/setups/org.kbelow.taas.setup->${git.clone.org.kbelow.taas.location|uri}/setups/org.kbelow.taas.setup"
         vm="true">
       <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
     </setupTask>
