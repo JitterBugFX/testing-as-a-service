@@ -238,7 +238,11 @@
       targetName="Modular API Baseline Target">
     <description>An API baseline based on the target platform named 'Modular API Baseline Target'</description>
   </setupTask>
+<<<<<<< HEAD
   <project href="org.kbelow.taas.setup#/"/>
+=======
+  <project href="org.kbelow.taas.setup#"/>
+>>>>>>> branch 'master' of https://github.com/JitterBugFX/testing-as-a-service.git
   <project href="user:/org.kbelow.projects.setup?name='user.project',label='&lt;User>',description='A container project for local user projects that are virtual members of the org.kbelow.projects project catalog'#/"/>
   <description>org.kbelow.projects provides cool projects.</description>
 </setup:ProjectCatalog>
